@@ -10562,3 +10562,32 @@ Processing by WelcomeController#index as HTML
 Completed 200 OK in 521ms (Views: 80.6ms | ActiveRecord: 0.0ms | Allocations: 319767)
 
 
+Started GET "/" for ::1 at 2023-12-15 12:54:13 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (Duration: 299.6ms | Allocations: 95971)
+Completed 200 OK in 1449ms (Views: 305.4ms | ActiveRecord: 0.0ms | Allocations: 1072724)
+
+
+Started GET "/login/student" for ::1 at 2023-12-15 12:54:18 -0600
+Processing by SessionsController#new_student as HTML
+  Rendering sessions/new_student.html.erb
+  Rendered sessions/new_student.html.erb (Duration: 11.1ms | Allocations: 3220)
+Completed 200 OK in 14ms (Views: 12.3ms | ActiveRecord: 0.0ms | Allocations: 3717)
+
+
+Started GET "/login/faculty" for ::1 at 2023-12-15 12:54:23 -0600
+Processing by SessionsController#new_faculty as HTML
+  Rendering sessions/new_faculty.html.erb
+  Rendered sessions/new_faculty.html.erb (Duration: 16.5ms | Allocations: 5145)
+Completed 200 OK in 19ms (Views: 17.3ms | ActiveRecord: 0.0ms | Allocations: 5490)
+
+
+Started GET "/" for ::1 at 2023-12-15 12:54:25 -0600
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (Duration: 2.1ms | Allocations: 884)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms | Allocations: 1163)
+
+
