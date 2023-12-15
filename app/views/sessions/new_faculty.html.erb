@@ -1,0 +1,44 @@
+<head>
+  <title>Faculty Login</title>
+  <%= stylesheet_link_tag 'session', media: 'all' %>
+  <%= stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css' %>
+</head>
+<body>
+  <div class="container">
+    <div class="wrapper">
+      <div class="title"><span>Faculty Login Form</span></div>
+
+      <%= form_with(url: login_faculty_path, method: :post) do |form| %>
+        <% if flash[:alert] %>
+          <div class="row">
+            <p class="error"><%= flash[:alert] %></p>
+          </div>
+        <% end %>
+
+        <div class="row">
+          <i class="fas fa-user"></i>
+          <%= form.text_field :email, type: 'email', placeholder: 'Email', required: true %>
+        </div>
+
+        <div class="row">
+          <i class="fas fa-lock"></i>
+          <%= form.password_field :password, placeholder: 'Password', required: true %>
+        </div>
+
+        <div class="row button">
+          <%= form.submit 'Login' %>
+        </div>
+
+        <div class="signup-link">Not a member? <%= link_to 'Sign up now', new_faculty_path %>
+        </div>
+        
+        <div class="signup-link">
+          <%= link_to 'Back to Welcome Page', root_path %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</body>
+</html>
+
+

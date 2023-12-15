@@ -1,0 +1,24 @@
+<head>
+  <%= stylesheet_link_tag 'userhomepage', media: 'all' %>
+</head>
+
+<div class="container">
+  <aside>
+    <nav>
+        <ul>
+          <li><a href="/faculty/home">Dashboard</a></li>
+          <li><a href="/presentations/new">Create New Presentation</a></li>
+          <li><a href="/faculty/edit">Edit Profile</a></li>
+          <li><%= link_to 'Logout', logout_path, method: :delete %></li>
+        </ul>
+    </nav>
+  </aside>
+  <main>
+      <h1>New Presentation</h1>
+      <div class="cards">
+        <div class="card">
+          <%= render "form", presentation: @presentation %>
+        </div>
+    </main>
+  </div>
+</div>

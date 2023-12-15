@@ -1,0 +1,48 @@
+<head>
+  <title>Edit Student</title>
+  <%= stylesheet_link_tag 'session', media: 'all' %>
+  <%= stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css' %>
+  </head>
+
+<body>
+  <div class="container">
+    <div class="wrapper">
+      <div class="title"><span>Edit Student</span></div>
+
+      <%= form_with(model: @current_student, url: student_path(@current_student), local: true, method: :patch) do |form| %>
+        <div class="row">
+          <i class="fas fa-user"></i>
+          <%= form.text_field :fname, class: 'new-user', value: @current_student.fname %>
+        </div>
+
+        <div class="row">
+          <i class="fas fa-user"></i>
+          <%= form.text_field :lname, value: @current_student.lname %>
+        </div>
+
+        <div class="row">
+          <i class="fas fa-envelope"></i>
+          <%= form.text_field :email, class: 'new-user', value: @current_student.email %>
+        </div>
+
+        <div class="row">
+          <i class="fas fa-lock"></i>
+          <%= form.password_field :password, placeholder: 'New Password' %>
+        </div>
+
+        <div class="row">
+          <i class="fas fa-lock"></i>
+          <%= form.password_field :password_confirmation, placeholder: 'Confirm New Password' %>
+        </div>
+
+        <div class="row button">
+          <%= form.submit 'Save Changes' %>
+        </div>
+
+        <div class="signup-link">
+          <%= link_to 'Back to Student Home', student_home_path %>
+        </div>
+      <% end %> 
+    </div>
+  </div>
+</body>

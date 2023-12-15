@@ -1,0 +1,28 @@
+<head>
+  <link rel="stylesheet" href="/assets/session.css" media="all" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+</head>
+
+<div id="<%= dom_id presentation %>" class="indentation">
+  <p>
+    <h4><strong>Title:</strong> <%= presentation.title %></h4>
+  </p>
+
+  <p>
+    <strong>Content:</strong> <%= presentation.content %>
+  </p>
+
+  <p>
+    <strong>Date:</strong> <%= presentation.date %>
+  </p>
+
+  <p>
+    <strong>Grade:</strong>
+    <% if presentation.grade.present? %>
+      <%= presentation.grade %>
+    <% else %>
+      Not Graded
+    <% end %>
+  </p>
+</div>
+

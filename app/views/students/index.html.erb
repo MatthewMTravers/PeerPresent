@@ -1,0 +1,56 @@
+<head>    
+    <title>Student Dashboard</title>
+    <%= stylesheet_link_tag 'userhomepage', media: 'all' %>
+</head>
+<body>
+    <div class="container">
+        <aside>
+            <nav>
+                <ul>
+                    <li><a href="/student/home">Dashboard</a></li>
+                    <li><a href="/evaluations/new">Create New Evaluation</a></li>
+                    <li><a href="/presentations">View Presentations</a></li>
+                    <li><a href="/evaluations">View Evaluations</a></li>
+                    <li><a href="/student/edit">Edit Profile</a></li>
+                    <li><a href="/student/drop">Drop Course</a></li>
+
+
+                    <li><%= link_to 'Logout', logout_path, method: :delete %></li>
+                </ul>
+            </nav>
+        </aside>
+        <main>
+            <h1><%= @current_student.fname %>'s Dashboard</h1>
+                <div class="cards">
+                    <div class="card">
+                        <h2>My Profile:</h2>
+                        <ul>
+                            <li>Name: <%= @current_student.fname %> <%= @current_student.lname %></li>
+                            <li>Role: Student</li>
+                            <li>
+                            Instructor: <%= "#{Faculty.find_by(id: @current_student.course_number)&.fname} #{Faculty.find_by(id: @current_student.course_number)&.lname} (#{Faculty.find_by(id: @current_student.course_number)&.email})" %>
+                            </li>
+                            <li>Email: <%= @current_student.email %></li>
+                            <li>Current Time: <%= (Time.now + 19.hours).strftime("%l:%M %p") %></li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h2>My Presentations:</h2>
+                        <% presentations = Presentation.where(student_id: @current_student.id) %>
+                        <% if presentations.any? %>
+                        <ul>
+                            <% presentations.each do |presentation| %>
+                            <li><%= render presentation %></li>
+                            <% end %>
+                        </ul>
+                        <% else %>
+                        <ul>
+                            <li>Nothing Assigned Yet...</li>
+                        </ul>
+                        <% end %>
+                    </div>
+                </div>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Student Presentations</title>
+  <%= stylesheet_link_tag 'welcome', media: 'all' %>
+</head>
+
+<body>
+  <div class="container">
+    <div class="title"><span>Student Presentation Manager</span></div>
+    <div class="sections-container">
+      <div class="left-section">
+        <div class="button-container">
+          <%= link_to "Student Login", login_student_path, class: "login-button" %>
+        </div>
+      </div>
+      <div class="right-section">
+        <div class="button-container">
+          <%= link_to "Faculty Login", login_faculty_path, class: "login-button" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

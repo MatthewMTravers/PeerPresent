@@ -1,0 +1,44 @@
+<head>
+  <title>Submit Evaluations</title>
+  <link rel="stylesheet" href="/assets/session.css" media="all" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="wrapper">
+      <div class="title"><span>New Evaluation</span></div>
+
+      <%= form_with(model: @evaluation, local: true, html: { class: 'form' }) do |form| %>
+        
+        <div class="row">
+          <i class="fas fa-file-alt"></i>
+  
+          <%= form.collection_select :presentation_id, @presentations, :id, :title, { prompt: 'Select a Presentation' }, { class: 'select' } %>
+        </div>
+        
+        <div class="row">
+          <i class="fas fa-star"></i>
+            <%= form.collection_select :score, (1..10), :to_i, :to_i, { prompt: 'Select a score' }, { class: 'select' } %>
+        </div>
+
+        <div class="row">
+          <i class="fas fa-comment"></i>
+  
+          <%= form.text_area :feedback, class: 'textarea', placeholder: "Add Your Comments" %>
+        </div>
+
+          <div class="row">
+            <i class="fas fa-user"></i>
+            <%= form.text_field :student_id, class: 'textarea', placeholder: "Add Student Id" %>
+          </div>
+
+        <div class="row button">
+          <%= form.submit 'Submit Evaluation', class: 'btn' %>
+        </div>
+      <% end %> 
+
+    </div>
+  </div>
+</body>
+</html>
