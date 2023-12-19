@@ -36,9 +36,9 @@
         </div>
 
         <div class="row">
-          <%= form.label :course_number, "Select Course" %>
+          <i class="fas fa-users"></i>
             <% if Faculty.any? %>
-              <%= form.collection_select :course_number, Faculty.all, :id, ->(faculty) { "#{faculty.fname} #{faculty.lname}'s Course" }, { prompt: 'Select a Course' }, { class: 'select' } %>
+              <%= form.collection_select :course_number, Faculty.all, :id, ->(faculty) { "#{faculty.fname} #{faculty.lname}'s Course" }, { prompt: 'Select Course' }, { class: 'select' } %>
             <% else %>
               <p>No courses available</p>
           <% end %>

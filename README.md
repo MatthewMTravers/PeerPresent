@@ -3,6 +3,9 @@
 Project Description:
 >This project is a presentation manager for both Students and Administrators that contains many features that would improve classroom experience. There is authentication logins and account creation for both Students and Administrators that give different permisisons as you navigate through our pages. The Student landing page offers a view for students to see what presentations are assigned to them, create evaluations for other students, edit their profile, etc. The Administrator view offers the class roster, the ability to assign students presentations, view evaluations, assign grades based on evaluations, etc. Overall, this presentation manager makes for simple use by Admin to provide an educational learning experience to all students to focus on the content and not the organization.
 
+Project Management:
+>After the primary and secondary submissions for a class project, I took over the project myself and am now using a KANBAN style project management system through JIRA to track my tickets, work through branches, and follow good practice guidelines.
+
 Technologies Utilized:
 >The backbone of this project is Ruby on Rails and does a lot of heavy lifting for you. From internal db, to MVC architecture, it handles everything smoothly and efficiently. Additionally there is HTML and CSS for the look and styling of the views so that it can be not only a functioning website but a visually attractive one too.
 
